@@ -15,5 +15,6 @@ namespace GameForm.Data
         }
 
         public DbSet<GameForm.Models.Discussion> Discussion { get; set; } = default!;
+        public DbSet<GameForm.Models.Comment> Comment { get; set; } = default!;
     }
 }

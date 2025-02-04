@@ -10,17 +10,17 @@
 <h1>All GAMES</h1>
 <h1>@name</h1>
 
-@* @foreach (var item in Model) *@
-@* { *@
-@*     <p> *@
-@*         @item.DiscussionId<br /> *@
-@*         @item.Title<br /> *@
-@*         @item.Content<br /> *@
-@*         @item.ImageFilename<br /> *@
-@*         @item.CreateDate<br /> *@
-@*         <a asp-controller="Home" asp-action="PhotoDetails" asp-route-id="@item.Comments">Display Comments</a> *@
-@*     </p> *@
-@* } *@
+<h2>Game Discussions</h2>
+@foreach (var item in Model)
+{
+    <div>
+        <h3>@item.Title</h3>
+        <p>@item.Content</p>
+        <p><strong>Posted on:</strong> @item.CreateDate.ToShortDateString()</p>
+        <img src="@Url.Content("~/images/" + item.ImageFilename)" alt="Game Image" width="200" />
+        <a asp-controller="Home" asp-action="DiscussionDetail" asp-route-id="@item.DiscussionId">Display Discussion</a>
+    </div>
+}
 
 
-@* <a href="/Home/PhotoDetails/@item.PhotoId">Display Photo</a> *@
+ @* <a href="/Home/PhotoDetails/item.PhotoId">Display Photo</a>  *@
