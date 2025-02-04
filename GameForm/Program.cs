@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using GameForm.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<GameFormContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("GameFormContext") ?? throw new InvalidOperationException("Connection string 'GameFormContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

@@ -1,4 +1,4 @@
-//using GameForm.Models;
+using GameForm.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameForm.Controllers
@@ -12,7 +12,24 @@ namespace GameForm.Controllers
 
         public IActionResult Index()
         {
+            // Create a list of photos
             return View();
+        }
+
+        // Display a discussion thread
+        public IActionResult DiscusstionDetail(int id)
+        {
+            // To-do: Entity framework - fetch the discusstion by id
+
+            Discussion discussion = new Discussion()
+            {
+                DiscussionId = 1,
+                Title = "Discussion Title",
+                Content = "Discussion Content",
+                ImageFilename = "image.jpg",
+                CreateDate = DateTime.Now
+            };
+            return View(discussion);
         }
 
         public IActionResult Privacy()
