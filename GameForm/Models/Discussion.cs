@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameForm.Models
 {
@@ -20,11 +21,12 @@ namespace GameForm.Models
         public string ImageFilename { get; set; } = string.Empty;
 
         // Property for file upload, not mapped in EF
+        [NotMapped]
         [Display(Name = "Upload Image")]
         // File for upload image
         public IFormFile? ImageFile { get; set; } // nullable
 
-    [Display(Name = "Create Date")]
+        [Display(Name = "Create Date")]
         // Date when discussion was created
         public DateTime CreateDate { get; set; } = DateTime.Now;
 
