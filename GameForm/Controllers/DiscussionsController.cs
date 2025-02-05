@@ -15,6 +15,7 @@ namespace GameForm.Controllers
     {
         private readonly GameFormContext _context;
 
+        // Constructor
         public DiscussionsController(GameFormContext context)
         {
             _context = context;
