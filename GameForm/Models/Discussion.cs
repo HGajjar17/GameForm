@@ -19,7 +19,12 @@ namespace GameForm.Models
         // Filename for uploaded image
         public string ImageFilename { get; set; } = string.Empty;
 
-        [Display(Name = "Create Date")]
+        // Property for file upload, not mapped in EF
+        [Display(Name = "Upload Image")]
+        // File for upload image
+        public IFormFile? ImageFile { get; set; } // nullable
+
+    [Display(Name = "Create Date")]
         // Date when discussion was created
         public DateTime CreateDate { get; set; } = DateTime.Now;
 
